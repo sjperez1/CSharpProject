@@ -1,0 +1,54 @@
+@model List;
+
+<a href="/dashboard">Dashboard</a>
+
+<h1>Create a New List</h1>
+
+<div class="container">
+    <form asp-action="CreateList" asp-controller="List" method="post">
+    <div>
+        <span asp-validation-for="Title"></span>
+        <div class="formline mb-3">
+            <label asp-for="Title"></label>
+            <input class="form-control-sm" asp-for="Title" placeholder="Title of List">
+        </div>
+        <span asp-validation-for="Description"></span>
+        <div>
+            <label asp-for="Description"></label>
+            <div>
+                <textarea asp-for="Description" cols="45" rows="8" placeholder="Description"></textarea>
+        </div>
+        <span asp-validation-for="AddFilm"></span>
+        <div class="formline mb-3">
+            <label asp-for="AddFilm"></label>
+            <input class="form-control-sm" asp-for="AddFilm" placeholder="Add Films to List">
+        </div>
+    </div>
+    <div>
+        @* <span asp-validation-for="Invite"></span>
+        <div class="formline mb-3">
+            <label asp-for="Invite"></label>
+            <select asp-for="Invite" class="form-control-sm">
+                <option hidden disabled selected>Invite Users</option>
+                @foreach()
+                {
+                    <option value=""></option>
+                }
+            </select>
+        </div> *@
+        <p>Attendees</p>
+        @* @foreach (var item in collection)
+        {
+            
+        } *@
+    </div>
+    <div>
+        <span asp-validation-for="MarathonDate"></span>
+        <div class="formline mb-3">
+            <label asp-for="MarathonDate"></label>
+            <input class="form-control-sm" asp-for="MarathonDate">
+        </div>
+    </div>
+    <button class="btn btn-outline-dark" type="submit">Create List</button>
+    </form>
+</div>

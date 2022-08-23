@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sarah\\Desktop\\CodingDojo\\c#\\CSharpProject\\CSharpProject.csproj": {}
+    "C:\\Users\\User\\Documents\\C#_AUG22\\project\\CSharpProject\\CSharpProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sarah\\Desktop\\CodingDojo\\c#\\CSharpProject\\CSharpProject.csproj": {
+    "C:\\Users\\User\\Documents\\C#_AUG22\\project\\CSharpProject\\CSharpProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sarah\\Desktop\\CodingDojo\\c#\\CSharpProject\\CSharpProject.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\C#_AUG22\\project\\CSharpProject\\CSharpProject.csproj",
         "projectName": "CSharpProject",
-        "projectPath": "C:\\Users\\Sarah\\Desktop\\CodingDojo\\c#\\CSharpProject\\CSharpProject.csproj",
-        "packagesPath": "C:\\Users\\Sarah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sarah\\Desktop\\CodingDojo\\c#\\CSharpProject\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\C#_AUG22\\project\\CSharpProject\\CSharpProject.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\C#_AUG22\\project\\CSharpProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Sarah\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -37,6 +37,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

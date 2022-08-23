@@ -19,6 +19,8 @@ public class List
     [Required(ErrorMessage = "is required")]
     public string AddFilm {get;set;}
 
+    public int WatchTime {get;set;}
+
     // public string Invite {get;set;}
 
     [Display(Name = "Marathon Date (optional)")]
@@ -30,8 +32,8 @@ public class List
 
     public DateTime UpdatedAt {get;set;} = DateTime.Now;
 
-    // public int UserId {get;set;}
-    // public User? ListCreator {get;set;}
+    public int UserId {get;set;}
+    public User? ListCreator {get;set;}
 }
 
 public class FutureDateAttribute : ValidationAttribute

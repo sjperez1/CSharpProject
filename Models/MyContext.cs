@@ -11,4 +11,5 @@ public class MyContext : DbContext
     public MyContext(DbContextOptions options) : base(options) { }
 
     public DbSet<List> Lists {get;set;}
+    public DbSet<User> User {get;set;}
 }

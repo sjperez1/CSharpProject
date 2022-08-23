@@ -1,0 +1,23 @@
+@model List<List>
+
+<div class="container">
+    <h1>My Playlists</h1>
+    @if(Model.Count == 0)
+    {
+        <h3>You currently have no playlists.</h3>
+        <h3>Create one to get started!</h3>
+    }
+    @foreach (List list in Model)
+    {
+        <div>
+            @{
+                int count = 1;
+                decimal hours = (Math.Floor((decimal)list.WatchTime/60));
+                decimal minutes = (((list.WatchTime/60) - hours) * 60);
+            }
+            <h2>Playlist @count: @list.Title <span>@hours h @minutes m</span> </h2>
+            <p>@list.Description</p>
+        </div>
+    }
+    <a href="/list/new" class="btn btn-outline-dark">Create New List</a>
+</div>

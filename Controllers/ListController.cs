@@ -1,6 +1,5 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity; // need this for password hasher
 using CSharpProject.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,7 +9,7 @@ public class ListController : Controller
 {
     private int? userid
     {
-        get{return HttpContext.Session.GetInt32("UserId");}
+        get{return HttpContext.Session.GetInt32("UUID");}
     }
 
     private bool isLoggedIn
@@ -34,11 +33,11 @@ public class ListController : Controller
     {
         if(!isLoggedIn || userid == null)
         {
-            return RedirectToAction("Forms", "User");
+            return RedirectToAction("Index", "User");
         }
 
         List<List> allLists = _context.Lists
-        // .Where(list => list.UserId = userid)
+        .Where(list => list.UserId == userid)
         .ToList();
 
         return View("AllLists", allLists);
@@ -49,7 +48,7 @@ public class ListController : Controller
     {
         if(!isLoggedIn)
         {
-            return RedirectToAction("Forms", "User");
+            return RedirectToAction("Index", "User");
         }
         return View("NewList");
     }
@@ -59,7 +58,7 @@ public class ListController : Controller
     {
         if(!isLoggedIn || userid == null)
         {
-            return RedirectToAction("Forms", "User");
+            return RedirectToAction("Index", "User");
         }
 
         if(ModelState.IsValid == false)
@@ -67,7 +66,7 @@ public class ListController : Controller
             return NewList();
         }
 
-        // newList.UserId = (int)userid;
+        newList.UserId = (int)userid;
         _context.Lists.Add(newList);
         _context.SaveChanges();
         return RedirectToAction("Dashboard");

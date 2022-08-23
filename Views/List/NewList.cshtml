@@ -7,27 +7,27 @@
 <div class="container">
     <form asp-action="CreateList" asp-controller="List" method="post">
     <div>
-        <span asp-validation-for="Title"></span>
         <div class="formline mb-3">
             <label asp-for="Title"></label>
+            <span asp-validation-for="Title"></span>
             <input class="form-control-sm" asp-for="Title" placeholder="Title of List">
         </div>
-        <span asp-validation-for="Description"></span>
         <div>
             <label asp-for="Description"></label>
+            <span asp-validation-for="Description"></span>
             <div>
                 <textarea asp-for="Description" cols="45" rows="8" placeholder="Description"></textarea>
         </div>
-        <span asp-validation-for="AddFilm"></span>
         <div class="formline mb-3">
             <label asp-for="AddFilm"></label>
+            <span asp-validation-for="AddFilm"></span>
             <input class="form-control-sm" asp-for="AddFilm" placeholder="Add Films to List">
         </div>
     </div>
     <div>
-        @* <span asp-validation-for="Invite"></span>
-        <div class="formline mb-3">
+    @* <div class="formline mb-3">
             <label asp-for="Invite"></label>
+            <span asp-validation-for="Invite"></span>
             <select asp-for="Invite" class="form-control-sm">
                 <option hidden disabled selected>Invite Users</option>
                 @foreach()
@@ -43,9 +43,9 @@
         } *@
     </div>
     <div>
-        <span asp-validation-for="MarathonDate"></span>
         <div class="formline mb-3">
             <label asp-for="MarathonDate"></label>
+            <span asp-validation-for="MarathonDate"></span>
             <input class="form-control-sm" asp-for="MarathonDate">
         </div>
     </div>

@@ -1,0 +1,10 @@
+@model List<Movie>
+
+<div class="container">
+    @foreach (Movie mov in Model)
+    {
+        <img src="@mov.image_url" alt="@mov.Title" id="thumbnail">
+        <a href="@mov.wiki">@mov.Title</a>
+    }
+
+</div>

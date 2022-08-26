@@ -16308,6 +16308,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Sarah\\Desktop\\CodingDojo\\CSharpProject\\Views\\List\\OneList.cshtml",
+      "TargetPath": "Views\\List\\OneList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Sarah\\Desktop\\CodingDojo\\CSharpProject\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"

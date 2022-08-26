@@ -9,13 +9,13 @@ public class LoginUser
 {
     [Required(ErrorMessage = "is required")]
     [EmailAddress]
-    [Display(Name =  "LoginEmail")]
+    [Display(Name =  "Email")]
     public string LoginEmail { get; set; }
 
 
     [Required(ErrorMessage = "is required")]
     [MinLength(8, ErrorMessage = "must be at least 8 chars")]
     [DataType(DataType.Password)]
-    [Display(Name = "LoginPassword")]
+    [Display(Name = "Password")]
     public string LoginPassword { get; set; }
 }

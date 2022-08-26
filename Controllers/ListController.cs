@@ -90,12 +90,16 @@ public class ListController : Controller
         }
 
         return View("EditList", oneList);
- 
     }
 
     [HttpPost("/list/{listId}/update")]
     public IActionResult UpdateList(int listId, List updatedList)
     {
+        if(!isLoggedIn)
+        {
+            return RedirectToAction("Index", "User");
+        }
+
         if(ModelState.IsValid == false)
         {
             return EditList(listId);
@@ -123,6 +127,11 @@ public class ListController : Controller
     [HttpGet("delete/{listId}")]
     public IActionResult DeleteList(int listId)
     {
+        if(!isLoggedIn)
+        {
+            return RedirectToAction("Index", "User");
+        }
+
         // using Single rather than First because the latter can sometimes cause errors with the delete function
         List? OneList = _context.Lists.SingleOrDefault(list => list.ListId == listId);
         if(OneList == null)
@@ -132,5 +141,20 @@ public class ListController : Controller
         _context.Lists.Remove(OneList);
         _context.SaveChanges();
         return RedirectToAction("Dashboard");
+    }
+
+    [HttpGet("/list/{listId}")]
+    public IActionResult OneList(int listId)
+    {
+        if(!isLoggedIn)
+        {
+            return RedirectToAction("Index", "User");
+        }
+        List? oneList = _context.Lists.FirstOrDefault(list => list.ListId == listId);
+        if(oneList == null)
+        {
+            return RedirectToAction("Dashboard");
+        }
+        return View("OneList", oneList);
     }
 }

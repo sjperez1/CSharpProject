@@ -105,6 +105,6 @@ public class UserController : Controller
     public IActionResult Logout()
     {
         HttpContext.Session.Clear();
-        return Enter();
+        return Index();
     }
 }

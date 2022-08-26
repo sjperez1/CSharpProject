@@ -20,7 +20,7 @@
                             decimal hours = (Math.Floor((decimal)list.WatchTime/60));
                             decimal minutes = (((list.WatchTime/60) - hours) * 60);
                         }
-                        <h2><a href="list/details/@list.ListId" class="listtitle">Playlist @count: @list.Title</a> <span class="time">@hours h @minutes m</span></h2>
+                        <h2><a href="list/@list.ListId" class="listtitle">Playlist @count: @list.Title</a> <span class="time">@hours h @minutes m</span></h2>
                         <p class="listdescription">@list.Description</p>
                         @{count++;}
                         <div class="actionbuttons">
@@ -37,7 +37,7 @@
                     {
                         if(onelist.MarathonDate > DateTime.Now)
                         {
-                            <li class="scheduleitem">@onelist.MarathonDate: <a href="list/details/@onelist.ListId" class="scheduletitles">@onelist.Title</a></li>
+                            <li class="scheduleitem">@onelist.MarathonDate: <a href="list/@onelist.ListId" class="scheduletitles">@onelist.Title</a></li>
                         }
                     }
                 </ul>
@@ -47,7 +47,7 @@
                         if(onelist.MarathonDate < DateTime.Now)
                         {
                             <h5 class="pastmarathon">Past Marathons</h5>
-                            <li class="scheduleitem">@onelist.MarathonDate: <a href="list/details/@onelist.ListId" class="scheduletitles">@onelist.Title</a></li>
+                            <li class="scheduleitem">@onelist.MarathonDate: <a href="list/@onelist.ListId" class="scheduletitles">@onelist.Title</a></li>
                         }
                     }
                 </ul>

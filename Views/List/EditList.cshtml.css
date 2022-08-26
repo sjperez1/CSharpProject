@@ -13,6 +13,11 @@
     text-align: center;
     margin: 20px;
     display: flex;
+    justify-content: center;
+}
+
+.update {
+    margin-right: 15px;
 }
 
 .formline {

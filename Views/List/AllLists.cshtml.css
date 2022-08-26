@@ -1,0 +1,78 @@
+.dashboardtitle {
+    text-align: center;
+    margin: 30px;
+}
+
+.nolist {
+    text-align: center;
+}
+
+.createbutton {
+    margin: 15px 0px;
+}
+
+.listtitle {
+    color: black;
+    font-size: 37px;
+    /* text-decoration: none; */
+}
+
+.leftandrightcontent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftcontent {
+    width: 60%;
+    margin-right: 10%;
+}
+.rightcontent {
+    padding: 20px;
+    box-shadow: 0px 0px 5px rgb(66, 66, 70);
+    height: fit-content;
+}
+
+.scheduletitle {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.scheduletitles {
+    color: black;
+}
+
+.scheduleitem {
+    margin-bottom: 10px;
+}
+
+.pastmarathon {
+    text-align: center;
+}
+
+.time {
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+.listdescription {
+    margin-left: 15px;
+    word-wrap: break-word;
+}
+
+.onelist {
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.onelist:hover {
+    box-shadow: 0px 0px 10px rgb(66, 66, 70);
+}
+
+.actionbuttons {
+    display: flex;
+    gap: 12px;
+}
+
+.actionbutton {
+    margin-top: 5px;
+}

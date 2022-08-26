@@ -1,0 +1,25 @@
+.newlisttitle {
+    text-align: center;
+    margin: 30px 0px;
+}
+
+.formcontainer {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.create {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.formline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.marathondatelabel {
+    width: fit-content;
+    margin-right: 15px;
+}

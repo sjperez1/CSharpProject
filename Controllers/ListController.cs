@@ -40,6 +40,10 @@ public class ListController : Controller
         .Where(list => list.UserId == userid)
         .ToList();
 
+        ViewBag.listsByDate = _context.Lists
+        .Where(list => list.UserId == userid).OrderBy(list => list.MarathonDate)
+        .ToList();
+
         return View("AllLists", allLists);
     }
 
@@ -68,6 +72,64 @@ public class ListController : Controller
 
         newList.UserId = (int)userid;
         _context.Lists.Add(newList);
+        _context.SaveChanges();
+        return RedirectToAction("Dashboard");
+    }
+
+    [HttpGet("/list/{listId}/edit")]
+    public IActionResult EditList(int listId)
+    {
+        if(!isLoggedIn)
+        {
+            return RedirectToAction("Index", "User");
+        }
+        List? oneList = _context.Lists.FirstOrDefault(list => list.ListId == listId);
+        if(oneList == null)
+        {
+            return RedirectToAction("Dashboard");
+        }
+
+        return View("EditList", oneList);
+ 
+    }
+
+    [HttpPost("/list/{listId}/update")]
+    public IActionResult UpdateList(int listId, List updatedList)
+    {
+        if(ModelState.IsValid == false)
+        {
+            return EditList(listId);
+        }
+
+        List? ListToBeUpdated = _context.Lists.FirstOrDefault(list => list.ListId == listId);
+
+        if(ListToBeUpdated == null)
+        {
+            return RedirectToAction("Dashboard");
+        }
+
+        ListToBeUpdated.Title = updatedList.Title;
+        ListToBeUpdated.Description = updatedList.Description;
+        ListToBeUpdated.AddFilm = updatedList.AddFilm;
+        ListToBeUpdated.MarathonDate = updatedList.MarathonDate;
+        ListToBeUpdated.UpdatedAt = DateTime.Now;
+
+        _context.Lists.Update(ListToBeUpdated);
+        _context.SaveChanges();
+
+        return RedirectToAction("Dashboard");
+    }
+
+    [HttpGet("delete/{listId}")]
+    public IActionResult DeleteList(int listId)
+    {
+        // using Single rather than First because the latter can sometimes cause errors with the delete function
+        List? OneList = _context.Lists.SingleOrDefault(list => list.ListId == listId);
+        if(OneList == null)
+        {
+            return RedirectToAction("Dashboard");
+        }
+        _context.Lists.Remove(OneList);
         _context.SaveChanges();
         return RedirectToAction("Dashboard");
     }

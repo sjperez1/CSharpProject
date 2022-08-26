@@ -19,10 +19,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/Desktop/CodingDojo/CSharpProject/Views/List/NewList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdFxOZXdMaXN0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Sarah/Desktop/CodingDojo/CSharpProject/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,6 +50,14 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Sarah/Desktop/CodingDojo/CSharpProject/Views/List/AllLists.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdFxBbGxMaXN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-9zh8b01i19
+
+[C:/Users/Sarah/Desktop/CodingDojo/CSharpProject/Views/List/EditList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdFxFZGl0TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-mhfd38t3sw
+
+[C:/Users/Sarah/Desktop/CodingDojo/CSharpProject/Views/List/NewList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdFxOZXdMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-jumlx0jk37
 
 [C:/Users/Sarah/Desktop/CodingDojo/CSharpProject/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s

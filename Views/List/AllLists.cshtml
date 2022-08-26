@@ -1,23 +1,57 @@
 @model List<List>
 
 <div class="container">
-    <h1>My Playlists</h1>
+    <h1 class="dashboardtitle">My Playlists</h1>
+    <a href="/list/new" class="btn btn-outline-dark createbutton">Create New List</a>
     @if(Model.Count == 0)
     {
-        <h3>You currently have no playlists.</h3>
-        <h3>Create one to get started!</h3>
+        <h3 class="nolist">You currently have no playlists.</h3>
+        <h3 class="nolist">Create one to get started!</h3>
     }
-    @foreach (List list in Model)
+    else
     {
-        <div>
-            @{
-                int count = 1;
-                decimal hours = (Math.Floor((decimal)list.WatchTime/60));
-                decimal minutes = (((list.WatchTime/60) - hours) * 60);
-            }
-            <h2>Playlist @count: @list.Title <span>@hours h @minutes m</span> </h2>
-            <p>@list.Description</p>
+        <div class="leftandrightcontent">
+            <div class="leftcontent">
+                @{int count = 1;}
+                @foreach(List list in Model)
+                {
+                    <div class="onelist">
+                        @{
+                            decimal hours = (Math.Floor((decimal)list.WatchTime/60));
+                            decimal minutes = (((list.WatchTime/60) - hours) * 60);
+                        }
+                        <h2><a href="list/details/@list.ListId" class="listtitle">Playlist @count: @list.Title</a> <span class="time">@hours h @minutes m</span></h2>
+                        <p class="listdescription">@list.Description</p>
+                        @{count++;}
+                        <div class="actionbuttons">
+                            <a href="/list/@list.ListId/edit" class="btn btn-success actionbutton">Edit</a>
+                            <a href="/delete/@list.ListId" class="btn btn-danger actionbutton">Delete</a>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="rightcontent">
+                <h2 class="scheduletitle">Marathon Schedule</h2>
+                <ul>
+                    @foreach(var onelist in ViewBag.listsByDate)
+                    {
+                        if(onelist.MarathonDate > DateTime.Now)
+                        {
+                            <li class="scheduleitem">@onelist.MarathonDate: <a href="list/details/@onelist.ListId" class="scheduletitles">@onelist.Title</a></li>
+                        }
+                    }
+                </ul>
+                <ul>
+                    @foreach(var onelist in ViewBag.listsByDate)
+                    {
+                        if(onelist.MarathonDate < DateTime.Now)
+                        {
+                            <h5 class="pastmarathon">Past Marathons</h5>
+                            <li class="scheduleitem">@onelist.MarathonDate: <a href="list/details/@onelist.ListId" class="scheduletitles">@onelist.Title</a></li>
+                        }
+                    }
+                </ul>
+            </div>
         </div>
     }
-    <a href="/list/new" class="btn btn-outline-dark">Create New List</a>
 </div>

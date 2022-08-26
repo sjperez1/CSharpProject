@@ -2,21 +2,21 @@
 
 <a class="btn btn-outline-dark" href="/dashboard">Dashboard</a>
 
-<h1 class="newlisttitle">Create a New List</h1>
+<h1 class="newlisttitle">Edit List: @Model.Title</h1>
 
-<form asp-action="CreateList" asp-controller="List" method="post">
+<form asp-action="UpdateList" asp-controller="List" method="post" asp-route-listId="@Model.ListId">
 <div class="formcontainer">
     <div class="leftform">
         <div class="formline mb-3">
             <label asp-for="Title"></label>
             <span asp-validation-for="Title"></span>
-            <input class="form-control-sm" asp-for="Title" placeholder="Title of List">
+            <input class="form-control-sm" asp-for="Title" placeholder="Title of List" value="@Model.Title">
         </div>
         <div>
             <label asp-for="Description"></label>
             <span asp-validation-for="Description"></span>
             <div>
-                <textarea asp-for="Description" cols="35" rows="4" placeholder="List Description"></textarea>
+                <textarea asp-for="Description" cols="35" rows="4" placeholder="List Description" value="@Model.Description"></textarea>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
         <div class="formline mb-3">
             <label asp-for="AddFilm"></label>
             <span asp-validation-for="AddFilm"></span>
-            <input class="form-control-sm" asp-for="AddFilm" placeholder="Add Films to List">
+            <input class="form-control-sm" asp-for="AddFilm" placeholder="Add Films to List" value="@Model.AddFilm">
         </div>
         <div>
             <div class="formline mb-3">
@@ -32,12 +32,13 @@
                     <label asp-for="MarathonDate"></label>
                 </div>
                 <span asp-validation-for="MarathonDate"></span>
-                <input class="form-control-sm" asp-for="MarathonDate">
+                <input class="form-control-sm" asp-for="MarathonDate" value="@Model.MarathonDate">
             </div>
         </div>
     </div>
 </div>
 <div class="create">
-    <button class="btn btn-outline-dark" type="submit">Create List</button>
+    <button class="btn btn-outline-dark" type="submit">Update List</button>
+    <a href="/delete/@Model.ListId" class="btn btn-danger">Delete</a>
 </div>
 </form>

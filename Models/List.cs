@@ -17,14 +17,14 @@ public class List
     public string Description {get;set;}
 
     [Required(ErrorMessage = "is required")]
+    [Display(Name = "Film Name")]
     public string AddFilm {get;set;}
 
     public int WatchTime {get;set;}
 
-    // public string Invite {get;set;}
-
-    [Display(Name = "Marathon Date (optional)")]
-    [DataType(DataType.Date)]
+    [Required(ErrorMessage = "is required")]
+    [Display(Name = "Marathon Date")]
+    [DataType(DataType.DateTime)]
     [FutureDate]
     public DateTime MarathonDate {get;set;}
 
